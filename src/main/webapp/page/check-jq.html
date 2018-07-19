@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="name"><span id="result">可以</span>
+</body>
+</html>
+
+<script  src="../resources/js/jquery-3.3.1.js"></script>
+
+<script>
+
+$(function(){
+
+    $("#name").blur(function(){
+
+        var url = 'http://localhost:8080/data/check?name='+$(this).val();
+
+        $.ajax({
+            url : url ,
+            method : 'get',
+            success : function(result) {
+                $("#result").html(result);
+            }
+        })
+
+    })
+
+
+})
+
+</script>

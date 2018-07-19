@@ -15,7 +15,6 @@ import java.util.List;
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
 
-
     @Override
     protected void service(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
@@ -29,13 +28,13 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-
+    //发送信息
     protected void addMsg(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("addMsg");
         response.getWriter().print("");
     }
-
+    //获取所有信息
     protected void getMsg(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("getMsg");

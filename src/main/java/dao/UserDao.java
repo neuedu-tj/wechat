@@ -16,6 +16,9 @@ public class UserDao {
 
         userList.add(new User(1, "tom" , "jquery 很有意思"));
         userList.add(new User(2, "jack" , "楼上的 你疯了么 ? "));
+        userList.add(new User(3, "rose" , "jquery 真疯了"));
+        userList.add(new User(4, "boss" , "都不想干了么???"));
+
 
     }
 
@@ -32,6 +35,8 @@ public class UserDao {
         UserDao dao =new UserDao();
 
         List<User> users = dao.getUserList();
+
+        //list->json
         String json = JSONArray.toJSONString(users);
 
         System.out.println(json);

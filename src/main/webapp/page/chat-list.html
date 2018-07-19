@@ -26,8 +26,6 @@
 <body>
 
     <div id="container">
-
-
     </div>
 
 
@@ -42,10 +40,18 @@
 
         $.ajax({
             type : 'post',
-            url : 'http://localhost:8080/data/user?method=getMsg' ,
+            url : 'http://localhost:8080/wechat/user?method=getMsg' ,
             dataType : 'json' ,
             success : function(data) {
-                console.log(data);
+
+                $.each(data , function(i,e){
+
+                    var item = $("<div>"+e.name+" : " + e.msg+"</div>")
+
+                    $("#container").append(item);
+                })
+
+
             }
 
 

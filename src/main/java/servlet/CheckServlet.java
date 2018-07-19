@@ -17,6 +17,8 @@ public class CheckServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("service~~~~~~");
 
+        response.setCharacterEncoding("utf-8");
+
 
         String name = request.getParameter("name");
 
