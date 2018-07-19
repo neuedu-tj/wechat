@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <input id="name"><span id="result">可以</span>
+
+
+</body>
+</html>
+
+<script>
+
+    window.onload =function(){
+
+        var name = document.getElementById('name');
+
+        name.onblur = function() {
+
+            var url = 'http://localhost:8080/data/check?name='+this.value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('get' , url , true);
+
+            xhr.onreadystatechange = function () {
+
+                   if(xhr.status == 200 && xhr.readyState== 4 ) {
+
+                       var response_text = xhr.responseText;
+
+                       var result = document.getElementById("result");
+
+                       if(response_text=="ok") {
+                           result.innerHTML = "ok , 能用. "
+                       } else {
+                           result.innerHTML = "err , 换一个 . "
+                       }
+
+                   } else {
+                       var result = document.getElementById("result");
+                       result.innerHTML = "loading......."
+                   }
+
+
+            }
+
+            xhr.send();
+
+
+        }
+
+
+    }
+
+</script>
