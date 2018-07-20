@@ -7,7 +7,7 @@
 <body>
 
 
-    <input id="name"><span id="result">可以</span>
+    <input id="name"><span id="result"></span>
 
 
 </body>
@@ -21,7 +21,7 @@
 
         name.onblur = function() {
 
-            var url = 'http://localhost:8080/data/check?name='+this.value;
+            var url = 'http://localhost:8080/wechat/check?name='+this.value;
 
             var xhr = new XMLHttpRequest();
             xhr.open('get' , url , true);

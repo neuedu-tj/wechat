@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <input id="name"><span id="result">可以</span>
+    <input id="name"><span id="result"></span>
 </body>
 </html>
 
@@ -17,13 +17,16 @@ $(function(){
 
     $("#name").blur(function(){
 
-        var url = 'http://localhost:8080/data/check?name='+$(this).val();
+        var url = 'http://localhost:8080/wechat/check?name='+$(this).val();
 
         $.ajax({
             url : url ,
             method : 'get',
             success : function(result) {
                 $("#result").html(result);
+            },
+            beforeSend : function() {
+                $("#result").html("loading")
             }
         })
 

@@ -19,6 +19,14 @@
             border: 1px springgreen solid;
         }
 
+        .add-loading {
+            background-image: url(../resources/img/loading-1.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            /*background-size: cover;*/
+
+        }
+
     </style>
 
 
@@ -28,6 +36,9 @@
     <div id="container">
     </div>
 
+    <input id="name" >
+    <input id="msg">
+    <input id="btn" type="button" value="send">
 
 
 </body>
@@ -38,11 +49,32 @@
 
     $(function(){
 
+        //添加信息......
+        $("#btn").click(function(){
+
+            var name = $("#name").val();
+            var msg = $("#msg").val();
+
+            $.ajax({
+                type : 'get' ,
+                url : 'http://localhost:8080/wechat/msg?method=addMsg&name='+name+'&msg='+msg,
+                success : function(){
+                        $("#container").append($("<div>"+name+" : " + msg +" </div>"))
+                }
+            })
+
+
+        })
+
+
+        //显示信息
         $.ajax({
             type : 'post',
-            url : 'http://localhost:8080/wechat/user?method=getMsg' ,
+            url : 'http://localhost:8080/wechat/msg?method=getMsg' ,
             dataType : 'json' ,
             success : function(data) {
+
+                $("#container").removeClass('add-loading')
 
                 $.each(data , function(i,e){
 
@@ -50,12 +82,10 @@
 
                     $("#container").append(item);
                 })
-
-
+            } ,
+            beforeSend : function(){
+                $("#container").addClass('add-loading')
             }
-
-
-
         })
 
 

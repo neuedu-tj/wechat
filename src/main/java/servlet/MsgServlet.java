@@ -1,8 +1,8 @@
 package servlet;
 
 import com.alibaba.fastjson.JSONArray;
-import dao.UserDao;
-import domain.User;
+import dao.MsgDao;
+import domain.Msg;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/user")
-public class UserServlet extends HttpServlet {
+@WebServlet("/msg")
+public class MsgServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
@@ -31,19 +31,27 @@ public class UserServlet extends HttpServlet {
     //发送信息
     protected void addMsg(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("addMsg");
-        response.getWriter().print("");
+        String name = request.getParameter("name");
+        String content = request.getParameter("msg");
+
+        Msg msg = new Msg(name , content);
+
+        MsgDao dao = new MsgDao();
+
     }
     //获取所有信息
     protected void getMsg(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("getMsg");
 
-        UserDao dao =new UserDao();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        List<User> users = dao.getUserList();
-        String json = JSONArray.toJSONString(users);
-        response.getWriter().print(json);
+
+        MsgDao dao =new MsgDao();
+        response.getWriter().print(dao.getMsgList());
     }
 
 
