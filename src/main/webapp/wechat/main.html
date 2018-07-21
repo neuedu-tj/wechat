@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>wechat - Home </title>
+		<!--<meta name="Content-type" content="image/jpeg" />-->
+		
+		
+		<!-- 如果在移动端显示, 需要此行代码  -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/container.css" />
+		
+		<link rel="stylesheet" href="css/phone-title.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header-menu.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="css/wrap-chat.css"/>
+		<link rel="stylesheet" type="text/css" href="css/wrap-add-friend.css"/>
+		<link rel="stylesheet" type="text/css" href="css/wrap-discovery.css"/>
+		<link rel="stylesheet" type="text/css" href="css/wrap-me.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="css/moments.css"/>
+		
+		<link rel="stylesheet" href="css/menu.css" />
+		
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		
+		<link rel="stylesheet" href="css/wrap.css" />
+		
+	</head>
+	<body>
+		
+		<div id="container">
+			<div id="phone-title"></div>
+			
+			<!-- header start -->
+			<div id="header" class="header-font">
+				
+				<div id="header-control" >
+					<div></div>
+					<div>返回</div>
+				</div>
+				
+				<div id="msg" >
+					微信(10)
+				</div>
+				
+				<div id="function">
+					<div id="add"></div>
+					
+					<div id="popup-menu">
+						<div id="small-triangle-up"></div>
+						<div class="pupup-menu-content">
+							<div class="pupup-menu-content-icon"><img src="img/icon/control/发起群聊.svg"/></div>
+							<div class="">发起群聊</div>
+						</div>
+						<div class="pupup-menu-content"> 
+							<div class="pupup-menu-content-icon"><img src="img/icon/control/添加朋友.svg"/></div>
+							<div>添加朋友</div>
+						</div>
+						<div class="pupup-menu-content">
+							<div class="pupup-menu-content-icon"><img src="img/icon/control/扫一扫.svg"/></div>
+							<div>扫一扫</div>
+						</div>
+						<div class="pupup-menu-content">
+							<div class="pupup-menu-content-icon"><img src="img/icon/control/收付款.svg"/></div>
+							<div>收付款</div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			<!-- header end -->
+
+			<div id="wrap"></div>
+
+			<!-- footer-menu -->
+			<div id="menu">
+				
+				<div  class="menu-div" data-icon-normal="img/icon/menu/聊天.svg" data-icon-press="img/icon/menu/聊天-press.svg" data-target="chat-list">
+					<div>
+						<img class="icon" src="img/icon/menu/聊天-press.svg" style="transform: scale(1.2);" />
+					</div>
+					<div class="font-menu">微信</div>
+				</div>
+				<div  class="menu-div" data-icon-normal="img/icon/menu/通讯录.svg" data-icon-press="img/icon/menu/通讯录-press.svg" data-target="friends">
+					<div>
+						<img class="icon" src="img/icon/menu/通讯录.svg" />
+					</div>
+					<div class="font-menu">通讯录</div>
+					
+					
+				</div>
+				<div class="menu-div" data-icon-normal="img/icon/menu/发现.svg" data-icon-press="img/icon/menu/发现-press.svg" data-target="discovery">
+					<div>
+						<img class="icon" src="img/icon/menu/发现.svg" style="transform: scale(.9);" />
+					</div>
+					<div class="font-menu">发现</div>
+				</div>
+				<div class="menu-div"data-icon-normal="img/icon/menu/me.svg" data-icon-press="img/icon/menu/me-press.svg" data-target="me">
+					<div>
+						<img class="icon" src="img/icon/menu/me.svg" style="transform: scale(.9);"/>
+					</div>
+					<div class="font-menu">我</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		
+	</body>
+</html>
+
+<!-- 引入 jQuery 库 -->
+<script type="text/javascript" src="../resources/js/jquery-3.3.1.js" ></script>
+
+<script type="text/javascript" src="js/menu-bottom.js" ></script>
+
+<script type="text/javascript" src="js/menu-header-popup.js" ></script>
+
+<script type="text/javascript" src="js/moments.js" ></script>
+
+<script type="text/javascript" src="js/router.js" ></script> 

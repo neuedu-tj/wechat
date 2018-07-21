@@ -11,9 +11,8 @@
         }
 
         #container {
-
             width: 40%;
-            height: 400px;
+            height: 200px;
             overflow: scroll;
 
             border: 1px springgreen solid;
@@ -62,8 +61,6 @@
                         $("#container").append($("<div>"+name+" : " + msg +" </div>"))
                 }
             })
-
-
         })
 
 
@@ -73,13 +70,9 @@
             url : 'http://localhost:8080/wechat/msg?method=getMsg' ,
             dataType : 'json' ,
             success : function(data) {
-
                 $("#container").removeClass('add-loading')
-
                 $.each(data , function(i,e){
-
                     var item = $("<div>"+e.name+" : " + e.msg+"</div>")
-
                     $("#container").append(item);
                 })
             } ,

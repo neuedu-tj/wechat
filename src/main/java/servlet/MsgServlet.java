@@ -25,7 +25,21 @@ public class MsgServlet extends HttpServlet {
             addMsg(request , response);
         } else if("getMsg".equalsIgnoreCase(method)) {
             getMsg(request , response);
+        } else if("getMsgByPage".equalsIgnoreCase(method)) {
+            getMsgByPage(request ,response);
         }
+    }
+
+    //按照分页获取信息
+    protected void getMsgByPage(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
+
+        int pageNo = Integer.parseInt(request.getParameter("pageNo"));
+
+        MsgDao dao = new MsgDao();
+        String json = dao.getMsgByPage(pageNo);
+
+        response.getWriter().print(json);
+
     }
 
     //发送信息
@@ -38,22 +52,14 @@ public class MsgServlet extends HttpServlet {
 
         MsgDao dao = new MsgDao();
 
+        dao.addMsg(msg);
+
     }
     //获取所有信息
     protected void getMsg(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
         MsgDao dao =new MsgDao();
         response.getWriter().print(dao.getMsgList());
     }
-
-
 
 }

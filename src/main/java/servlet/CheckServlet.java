@@ -19,7 +19,6 @@ public class CheckServlet extends HttpServlet {
 
         response.setCharacterEncoding("utf-8");
 
-
         String name = request.getParameter("name");
 
         System.out.println("name : "+ name );
@@ -27,7 +26,7 @@ public class CheckServlet extends HttpServlet {
         try{
             Thread.sleep(1000);
         }catch (Exception e) {
-            e.printStackTrace();;
+
         }
 
 
