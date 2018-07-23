@@ -1,0 +1,48 @@
+* {
+    font-family: 微软雅黑;
+    padding: 0px;
+    margin: 0px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#container {
+    margin: 10px;
+}
+
+#name{
+    height: 20px; width: 200px;
+    font-size: 14px; color: yellow;
+    background-color: #2aabd2; border: none; text-indent: 10px;
+
+
+}
+#result {
+    margin-top: 4px;
+    max-width: 198px;
+    max-height: 100px;
+    /*background-color: ;*/
+
+    overflow: scroll;
+}
+
+#result div {
+    text-indent: 10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.item-selected {
+
+    color: dodgerblue;
+    background-color: gainsboro;;
+}
+
+.item-normal {
+    color: #3c3c3c;
+    background-color: whitesmoke;
+}

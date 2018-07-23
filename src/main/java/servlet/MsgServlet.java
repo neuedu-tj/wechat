@@ -12,9 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/msg")
+@WebServlet(value="/msg" , loadOnStartup = 1)
 public class MsgServlet extends HttpServlet {
-
+//
+//    @Override
+//    public void init() throws ServletException {
+//        System.out.println("init ~~~~~~~~~~~~~~~~~");
+//    }
     @Override
     protected void service(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException {
 

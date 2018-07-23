@@ -56,15 +56,17 @@
 
         var pageNo = 1;
 
+        //当目标滚动时 .
         $("#container").scroll(function(){
             //可视区域高度
             var height = $(this).height();
 
+            //卷动高度
+            var scrollTop = Math.round($(this).scrollTop());
+
             //该层可滚动的总高度 .
             var scrollHeight = Math.round($(this)[0].scrollHeight);
 
-            //卷动高度
-           var scrollTop = Math.round($(this).scrollTop());
 
            if( (height + scrollTop ) >=  scrollHeight  ) {
                // console.log("end : " +height +" , "+scrollTop +" : " + scrollHeight)
@@ -78,10 +80,10 @@
                    } ,
                    dataType : 'json' ,
                    success : function(data) {
-                       console.log(pageNo);
-                       console.log(data)
+                       // console.log(pageNo);
+                       // console.log(data)
                        if(data.length !=0) {
-                           $("#container").removeClass('add-loading')
+
                            $.each(data , function(i,e){
                                var item = $("<div>"+e.name+" : " + e.msg+"</div>")
                                item.addClass('size');
@@ -92,7 +94,7 @@
                        }
                    } ,
                    beforeSend : function() {
-                       $("#container").removeClass('add-loading')
+                       // $("#container").removeClass('add-loading')
                    }
                })
 
@@ -116,7 +118,6 @@
             dataType : 'json' ,
             success : function(data) {
                 pageNo++;
-                $("#container").removeClass('add-loading')
                 $.each(data , function(i,e){
                     var item = $("<div>"+e.name+" : " + e.msg+"</div>")
                     item.addClass('size');
