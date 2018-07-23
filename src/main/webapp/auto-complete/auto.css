@@ -28,7 +28,7 @@
     overflow: scroll;
 }
 
-#result div {
+.item {
     text-indent: 10px;
     height: 20px;
     line-height: 20px;
@@ -36,13 +36,13 @@
     font-weight: 100;
 }
 
-.item-selected {
+.selected {
 
     color: dodgerblue;
     background-color: gainsboro;;
 }
 
-.item-normal {
+.normal {
     color: #3c3c3c;
     background-color: whitesmoke;
 }
