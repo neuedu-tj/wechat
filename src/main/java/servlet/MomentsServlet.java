@@ -1,6 +1,7 @@
 package servlet;
 
 
+import dao.MomentsDao;
 import domain.Moments;
 import org.apache.commons.io.FileUtils;
 
@@ -32,8 +33,17 @@ public class MomentsServlet extends HttpServlet {
 
         Part part = request.getPart("img");
 
-        FileUtils.copyInputStreamToFile( part.getInputStream() , new File("e:/"+part.getSubmittedFileName()));
+        //文件存入E盘
+        FileUtils.copyInputStreamToFile( part.getInputStream() , new File("e:/wechat/img/"+part.getSubmittedFileName()));
 
+        //文件的网络访问路径 , 是图片服务器地址
+        String url = "http://localhost:8080/wechat/img/"+part.getSubmittedFileName();
 
+        moments.setImg(url);
+
+        MomentsDao momentsDao = new MomentsDao();
+        int row = momentsDao.saveMoments(moments);
+
+        System.out.println("row : " + row);
     }
 }

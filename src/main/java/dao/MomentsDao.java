@@ -14,7 +14,7 @@ public class MomentsDao {
 
     public int saveMoments(Moments moments) {
         int row = 0;
-        String sql = "insert into moments ( 'nickname' , 'content' , 'img'  ) values ( ? , ? ,? )";
+        String sql = "insert into moments ( nickname , content , img  ) values ( ? , ? ,? )";
         try{
             Connection connection = new JDBCUtils().openConnection();
             PreparedStatement ps = connection.prepareStatement(sql);

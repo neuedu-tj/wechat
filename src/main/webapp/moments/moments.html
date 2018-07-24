@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="Access-Control-Allow-Origin" content="*">
+    <meta >
     <title>Title</title>
 </head>
 <body>
@@ -17,6 +19,12 @@
 
     </form>
 
+    <hr>
+    
+    <img id="show" src="http://localhost:8080/wechat/img/img-3.jpg" height="200px">
+
+
+
 </body>
 </html>
 
@@ -28,5 +36,8 @@
         var base = window.location.protocol+"//"+document.domain + ":"+window.location.port+"/wechat/";
 
         $("#moment-form").attr("action" , base+"moments");
+
+
+
    })
 </script>
