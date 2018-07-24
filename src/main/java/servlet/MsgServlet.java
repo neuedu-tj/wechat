@@ -2,6 +2,7 @@ package servlet;
 
 import com.alibaba.fastjson.JSONArray;
 import dao.MsgDao;
+import domain.Moments;
 import domain.Msg;
 
 import javax.servlet.ServletException;
@@ -64,6 +65,7 @@ public class MsgServlet extends HttpServlet {
 
         MsgDao dao =new MsgDao();
         response.getWriter().print(dao.getMsgList());
+
     }
 
 }

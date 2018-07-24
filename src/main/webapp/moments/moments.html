@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <form  id="moment-form" method="post" enctype="multipart/form-data">
+
+        Nickname : <input id="nickname" name="nickname" autocomplete="off"><br>
+        Content : <input id="content" name="content" autocomplete="off"><br>
+        Image : <input type="file" id="img" name="img"><br>
+
+        <input type="submit" value="send" id="btn">
+
+    </form>
+
+</body>
+</html>
+
+<script src="../resources/js/jquery-3.3.1.js"></script>
+<script>
+
+   $(function(){
+
+        var base = window.location.protocol+"//"+document.domain + ":"+window.location.port+"/wechat/";
+
+        $("#moment-form").attr("action" , base+"moments");
+   })
+</script>

@@ -20,7 +20,6 @@ $(window).keyup(function(e){
           method : 'get',
           dataType : 'json',
           success : function(data) {
-
               total = data.length;
               $.each(data.sort() , function( i, e ) {
                  var item = $("<div>"+e.name+"</div>").addClass("item").addClass("normal")
